@@ -40,7 +40,7 @@ Thank you!`;
         <div className="flex justify-between items-center">
           {/* Logo and Title */}
           <div className="flex items-center space-x-4 animate-fadeInLeft">
-            <div className="bg-gradient-to-br from-blue-800 to-blue-900 p-2 rounded-2xl shadow-lg">
+            <div className="bg-gradient-to-br from-blue-800 to-blue-900 p-2 rounded-full shadow-lg">
               <img 
                 src="/ChatGPT Image Jul 8, 2025, 05_11_48 PM.png" 
                 alt="TAXTIC Logo" 

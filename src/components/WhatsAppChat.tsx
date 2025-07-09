@@ -44,7 +44,7 @@ const WhatsAppChat: React.FC = () => {
           {/* Header */}
           <div className="bg-green-500 text-white p-4 rounded-t-2xl">
             <div className="flex items-center space-x-3">
-              <div className="bg-gradient-to-br from-blue-800 to-blue-900 p-1.5 rounded-lg">
+              <div className="bg-gradient-to-br from-blue-800 to-blue-900 p-1.5 rounded-full">
                 <img 
                   src="/ChatGPT Image Jul 8, 2025, 05_11_48 PM.png" 
                   alt="TAXTIC Logo" 
