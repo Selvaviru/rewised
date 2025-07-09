@@ -117,7 +117,25 @@ const Services: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg">
+              <button 
+                onClick={() => {
+                  const phoneNumber = '919789485470';
+                  const message = `Hi TAXTIC Team,
+
+I'm interested in ${service.title}. Please provide me with more details about:
+- Service process
+- Required documents
+- Timeline
+- Exact pricing
+
+Please contact me to get started.
+
+Thank you!`;
+                  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                  window.open(url, '_blank');
+                }}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              >
                 Get Started
               </button>
             </div>

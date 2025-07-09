@@ -6,15 +6,32 @@ const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const services = [
-    'Income Tax Return Filing',
-    'GST Registration & Returns',
-    'Business Registration',
-    'Trademark Registration',
-    'TDS Returns',
-    'Audit Services',
-    'Accounting Services',
-    'Tax Planning'
+    { name: 'Income Tax Return Filing', price: '₹4,000 - ₹6,000' },
+    { name: 'GST Registration & Returns', price: '₹5,000 - ₹8,000' },
+    { name: 'Business Registration', price: '₹6,000 - ₹10,000' },
+    { name: 'Trademark Registration', price: '₹5,000 - ₹8,000' },
+    { name: 'TDS Returns', price: '₹4,000 - ₹6,000' },
+    { name: 'Audit Services', price: '₹7,000 - ₹10,000' },
+    { name: 'Accounting Services', price: '₹4,500 - ₹7,000' },
+    { name: 'Tax Planning', price: '₹5,000 - ₹8,000' }
   ];
+
+  const openWhatsApp = (service: string) => {
+    const phoneNumber = '919789485470';
+    const message = `Hi TAXTIC Team,
+
+I'm interested in ${service}. Please provide me with more details about:
+- Service process
+- Required documents
+- Timeline
+- Exact pricing
+
+Please contact me to get started.
+
+Thank you!`;
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  };
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50 animate-slideInDown">
@@ -23,7 +40,13 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center">
           {/* Logo and Title */}
           <div className="flex items-center space-x-4 animate-fadeInLeft">
-            <img src="/ChatGPT Image Jul 8, 2025, 05_11_48 PM.png" alt="TAXTIC Logo" className="w-12 h-12 rounded-2xl shadow-lg hover-scale animate-float" />
+            <div className="bg-gradient-to-br from-blue-800 to-blue-900 p-2 rounded-2xl shadow-lg">
+              <img 
+                src="/ChatGPT Image Jul 8, 2025, 05_11_48 PM.png" 
+                alt="TAXTIC Logo" 
+                className="w-10 h-10 rounded-xl hover-scale animate-float" 
+              />
+            </div>
             <div>
               <h1 className="text-2xl font-bold text-gray-800 hover:text-blue-600 transition-colors duration-300">TAXTIC</h1>
               <span className="text-sm text-gray-600 italic">Your trusted tax buddy</span>
@@ -36,24 +59,60 @@ const Header: React.FC = () => {
             <div className="relative">
               <button
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
+                onMouseEnter={() => setIsServicesOpen(true)}
                 className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium hover:scale-105"
               >
                 <span>Services</span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />
               </button>
-              {isServicesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border py-2 z-50 animate-fadeInUp">
+              
+              <div 
+                className={`absolute top-full left-0 mt-2 w-80 bg-white rounded-2xl shadow-2xl border py-4 z-50 transition-all duration-300 transform ${
+                  isServicesOpen 
+                    ? 'opacity-100 translate-y-0 scale-100' 
+                    : 'opacity-0 translate-y-4 scale-95 pointer-events-none'
+                }`}
+                onMouseLeave={() => setIsServicesOpen(false)}
+              >
+                <div className="px-4 pb-3 border-b border-gray-100">
+                  <h3 className="text-lg font-bold text-gray-800">Our Services</h3>
+                  <p className="text-sm text-gray-600">Professional tax and business solutions</p>
+                </div>
+                
+                <div className="max-h-96 overflow-y-auto">
                   {services.map((service, index) => (
-                    <a
+                    <button
                       key={index}
-                      href="#services"
-                      className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 border-b border-gray-100 last:border-b-0 hover:translate-x-2"
+                      onClick={() => openWhatsApp(service.name)}
+                      className="w-full text-left px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 border-b border-gray-50 last:border-b-0 group"
+                      style={{animationDelay: `${index * 0.05}s`}}
                     >
-                      {service}
-                    </a>
+                      <div className="flex justify-between items-center">
+                        <div>
+                          <div className="font-medium group-hover:translate-x-2 transition-transform duration-300">
+                            {service.name}
+                          </div>
+                          <div className="text-sm text-blue-600 font-semibold">
+                            {service.price}
+                          </div>
+                        </div>
+                        <div className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          Get Started
+                        </div>
+                      </div>
+                    </button>
                   ))}
                 </div>
-              )}
+                
+                <div className="px-4 pt-3 border-t border-gray-100">
+                  <button
+                    onClick={() => openWhatsApp('General Inquiry')}
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 hover:scale-105"
+                  >
+                    Contact for Custom Service
+                  </button>
+                </div>
+              </div>
             </div>
 
             <a href="#about" className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium hover:scale-105">About</a>
@@ -62,14 +121,20 @@ const Header: React.FC = () => {
 
             {/* Contact Info */}
             <div className="flex items-center space-x-6 text-sm">
-              <div className="flex items-center space-x-2 text-gray-600">
+              <button
+                onClick={() => window.open('tel:+919789485470', '_self')}
+                className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-all duration-300 hover:scale-105"
+              >
                 <Phone className="w-4 h-4" />
                 <span>+91 97894 85470</span>
-              </div>
-              <div className="flex items-center space-x-2 text-gray-600">
+              </button>
+              <button
+                onClick={() => window.open('mailto:taxtictt@gmail.com', '_self')}
+                className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-all duration-300 hover:scale-105"
+              >
                 <Mail className="w-4 h-4" />
                 <span>taxtictt@gmail.com</span>
-              </div>
+              </button>
             </div>
           </div>
 
@@ -89,13 +154,16 @@ const Header: React.FC = () => {
               <div className="space-y-2">
                 <span className="text-gray-700 font-medium">Services</span>
                 {services.map((service, index) => (
-                  <a
+                  <button
                     key={index}
-                    href="#services"
-                    className="block ml-4 text-gray-600 hover:text-blue-600 transition-all duration-300 hover:translate-x-2"
+                    onClick={() => openWhatsApp(service.name)}
+                    className="block w-full text-left ml-4 text-gray-600 hover:text-blue-600 transition-all duration-300 hover:translate-x-2 py-1"
                   >
-                    {service}
-                  </a>
+                    <div className="flex justify-between items-center">
+                      <span>{service.name}</span>
+                      <span className="text-xs text-blue-600 font-semibold">{service.price}</span>
+                    </div>
+                  </button>
                 ))}
               </div>
               <a href="#about" className="text-gray-700 hover:text-blue-600 transition-all duration-300 hover:translate-x-2">About</a>
@@ -103,14 +171,20 @@ const Header: React.FC = () => {
               <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-all duration-300 hover:translate-x-2">Contact</a>
               
               <div className="pt-4 border-t border-gray-200">
-                <div className="flex items-center space-x-2 text-gray-600 mb-2">
+                <button
+                  onClick={() => window.open('tel:+919789485470', '_self')}
+                  className="flex items-center space-x-2 text-gray-600 mb-2 hover:text-blue-600 transition-all duration-300"
+                >
                   <Phone className="w-4 h-4" />
                   <span>+91 97894 85470</span>
-                </div>
-                <div className="flex items-center space-x-2 text-gray-600">
+                </button>
+                <button
+                  onClick={() => window.open('mailto:taxtictt@gmail.com', '_self')}
+                  className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-all duration-300"
+                >
                   <Mail className="w-4 h-4" />
                   <span>taxtictt@gmail.com</span>
-                </div>
+                </button>
               </div>
             </div>
           </div>

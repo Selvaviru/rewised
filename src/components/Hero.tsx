@@ -63,11 +63,13 @@ const Hero: React.FC = () => {
           <div className="space-y-8 animate-fadeInLeft">
             {/* Logo and Brand */}
             <div className="flex items-center space-x-4 mb-8">
-              <img 
-                src="/ChatGPT Image Jul 8, 2025, 05_11_48 PM.png" 
-                alt="TAXTIC Logo" 
-                className="w-16 h-16 rounded-2xl shadow-lg hover-scale animate-float" 
-              />
+              <div className="bg-gradient-to-br from-blue-800 to-blue-900 p-3 rounded-2xl shadow-lg">
+                <img 
+                  src="/ChatGPT Image Jul 8, 2025, 05_11_48 PM.png" 
+                  alt="TAXTIC Logo" 
+                  className="w-12 h-12 rounded-xl hover-scale animate-float" 
+                />
+              </div>
               <div>
                 <h1 className="text-3xl font-bold text-gray-800 hover:text-blue-600 transition-colors duration-300">TAXTIC</h1>
                 <span className="text-sm text-gray-600 italic">Your trusted tax buddy</span>
