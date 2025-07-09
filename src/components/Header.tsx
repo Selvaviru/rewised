@@ -23,7 +23,7 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center">
           {/* Logo and Title */}
           <div className="flex items-center space-x-4 animate-fadeInLeft">
-            <img src="/image.png" alt="TAXTIC Logo" className="w-12 h-12 rounded-full border-2 border-blue-200 shadow-md hover-scale animate-float" />
+            <img src="/ChatGPT Image Jul 8, 2025, 05_11_48 PM.png" alt="TAXTIC Logo" className="w-12 h-12 rounded-2xl shadow-lg hover-scale animate-float" />
             <div>
               <h1 className="text-2xl font-bold text-gray-800 hover:text-blue-600 transition-colors duration-300">TAXTIC</h1>
               <span className="text-sm text-gray-600 italic">Your trusted tax buddy</span>

@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div className="space-y-4 animate-fadeInLeft">
             <div className="flex items-center space-x-3 hover-scale transition-all duration-300">
-              <img src="/image.png" alt="TAXTIC Logo" className="w-10 h-10 rounded-full border-2 border-gray-300 shadow-sm animate-float" />
+              <img src="/ChatGPT Image Jul 8, 2025, 05_11_48 PM.png" alt="TAXTIC Logo" className="w-10 h-10 rounded-xl shadow-sm animate-float" />
               <div>
                 <h3 className="text-2xl font-bold hover:text-blue-400 transition-colors duration-300">TAXTIC</h3>
                 <p className="text-gray-400 text-sm">Your trusted tax buddy</p>
