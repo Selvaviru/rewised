@@ -7,15 +7,23 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppChat from './components/WhatsAppChat';
+import Blog from './components/Blog';
+import FileUpload from './components/FileUpload';
+import ParallaxSection from './components/ParallaxSection';
+import NotificationSystem from './components/NotificationSystem';
 
 function App() {
   return (
     <div className="min-h-screen">
+      <NotificationSystem />
       <Header />
       <Hero />
+      <ParallaxSection />
       <About />
       <Services />
+      <FileUpload />
       <Testimonials />
+      <Blog />
       <Contact />
       <Footer />
       <WhatsAppChat />

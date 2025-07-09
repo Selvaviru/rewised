@@ -1,63 +1,71 @@
 import React from 'react';
-import { Calculator, FileText, Building, Award, Users, Shield, Clock, CheckCircle, Briefcase, CreditCard, BookOpen, PieChart } from 'lucide-react';
+import { Calculator, FileText, Building, Award, Users, Shield, Clock, CheckCircle, Briefcase, CreditCard, BookOpen, PieChart, Receipt, Gavel, TrendingUp, UserCheck } from 'lucide-react';
 
 const Services: React.FC = () => {
   const services = [
     {
-      icon: <Calculator className="w-12 h-12" />,
+      icon: <Calculator className="w-12 h-12 text-blue-600" />,
       title: 'Income Tax Return Filing',
       description: 'Complete ITR filing services for individuals, businesses, and professionals with maximum refund guarantee.',
       features: ['ITR-1 to ITR-7 Filing', 'Tax Planning & Advisory', 'Refund Processing', 'Notice Handling', 'Amendment Returns'],
-      price: '₹4,000 - ₹6,000'
+      price: '₹4,000 - ₹6,000',
+      color: 'blue'
     },
     {
-      icon: <FileText className="w-12 h-12" />,
+      icon: <Receipt className="w-12 h-12 text-green-600" />,
       title: 'GST Services',
       description: 'End-to-end GST registration, return filing, and compliance management for your business.',
       features: ['GST Registration', 'Monthly/Quarterly Returns', 'GST Audit Support', 'Input Tax Credit', 'GST Refund'],
-      price: '₹5,000 - ₹8,000'
+      price: '₹5,000 - ₹8,000',
+      color: 'green'
     },
     {
-      icon: <Building className="w-12 h-12" />,
+      icon: <Building className="w-12 h-12 text-purple-600" />,
       title: 'Business Registration',
       description: 'Complete business setup services including company incorporation and compliance.',
       features: ['Private Limited Company', 'LLP Registration', 'Partnership Firm', 'Sole Proprietorship', 'NGO Registration'],
-      price: '₹6,000 - ₹10,000'
+      price: '₹6,000 - ₹10,000',
+      color: 'purple'
     },
     {
-      icon: <Award className="w-12 h-12" />,
+      icon: <Gavel className="w-12 h-12 text-orange-600" />,
       title: 'Trademark Registration',
       description: 'Protect your brand with comprehensive trademark registration and IP services.',
       features: ['Trademark Search', 'Application Filing', 'Objection Handling', 'Registration Certificate', 'Renewal Services'],
-      price: '₹5,000 - ₹8,000'
+      price: '₹5,000 - ₹8,000',
+      color: 'orange'
     },
     {
-      icon: <Briefcase className="w-12 h-12" />,
+      icon: <FileText className="w-12 h-12 text-red-600" />,
       title: 'TDS Services',
       description: 'Complete TDS compliance including return filing, certificate generation, and advisory.',
       features: ['TDS Return Filing', 'TDS Certificates', 'Lower Deduction Certificate', 'TDS Reconciliation', 'Penalty Handling'],
-      price: '₹4,000 - ₹6,000'
+      price: '₹4,000 - ₹6,000',
+      color: 'red'
     },
     {
-      icon: <BookOpen className="w-12 h-12" />,
+      icon: <UserCheck className="w-12 h-12 text-indigo-600" />,
       title: 'Audit Services',
       description: 'Professional audit services for statutory compliance and business growth.',
       features: ['Statutory Audit', 'Internal Audit', 'Tax Audit', 'GST Audit', 'Due Diligence'],
-      price: '₹7,000 - ₹10,000'
+      price: '₹7,000 - ₹10,000',
+      color: 'indigo'
     },
     {
-      icon: <CreditCard className="w-12 h-12" />,
+      icon: <BookOpen className="w-12 h-12 text-pink-600" />,
       title: 'Accounting Services',
       description: 'Complete bookkeeping and accounting solutions for businesses of all sizes.',
       features: ['Bookkeeping', 'Financial Statements', 'MIS Reports', 'Payroll Processing', 'Compliance Management'],
-      price: '₹4,500 - ₹7,000'
+      price: '₹4,500 - ₹7,000',
+      color: 'pink'
     },
     {
-      icon: <PieChart className="w-12 h-12" />,
+      icon: <TrendingUp className="w-12 h-12 text-teal-600" />,
       title: 'Tax Planning',
       description: 'Strategic tax planning to minimize tax liability and maximize savings.',
       features: ['Investment Planning', 'Tax Saving Strategies', 'Retirement Planning', 'Estate Planning', 'Business Tax Planning'],
-      price: '₹5,000 - ₹8,000'
+      price: '₹5,000 - ₹8,000',
+      color: 'teal'
     }
   ];
 
@@ -98,16 +106,16 @@ const Services: React.FC = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-t-4 border-blue-600 hover-lift animate-fadeInUp"
+              className={`bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-t-4 border-${service.color}-600 hover-lift animate-fadeInUp`}
               style={{animationDelay: `${0.1 * index}s`}}
             >
-              <div className="text-blue-600 mb-4 flex justify-center hover-scale">
+              <div className="mb-4 flex justify-center hover-scale">
                 {service.icon}
               </div>
               <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">{service.title}</h3>
               <p className="text-gray-600 mb-4 text-center text-sm">{service.description}</p>
               <div className="text-center mb-4">
-                <span className="text-lg font-bold text-blue-600">{service.price}</span>
+                <span className={`text-lg font-bold text-${service.color}-600`}>{service.price}</span>
               </div>
               <ul className="space-y-2 mb-6">
                 {service.features.map((feature, featureIndex) => (
@@ -117,7 +125,7 @@ const Services: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              <button 
+              <button
                 onClick={() => {
                   const phoneNumber = '919789485470';
                   const message = `Hi TAXTIC Team,
@@ -134,7 +142,7 @@ Thank you!`;
                   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
                   window.open(url, '_blank');
                 }}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                className={`w-full bg-${service.color}-600 hover:bg-${service.color}-700 text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg`}
               >
                 Get Started
               </button>
