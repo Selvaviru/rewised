@@ -44,7 +44,7 @@ Thank you!`;
               <img 
                 src="/ChatGPT Image Jul 8, 2025, 05_11_48 PM.png" 
                 alt="TAXTIC Logo" 
-                className="w-10 h-10 rounded-xl hover-scale animate-float" 
+                className="w-10 h-10 rounded-full hover-scale animate-float" 
               />
             </div>
             <div>

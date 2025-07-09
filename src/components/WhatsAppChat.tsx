@@ -48,7 +48,7 @@ const WhatsAppChat: React.FC = () => {
                 <img 
                   src="/ChatGPT Image Jul 8, 2025, 05_11_48 PM.png" 
                   alt="TAXTIC Logo" 
-                  className="w-8 h-8 rounded-md" 
+                  className="w-8 h-8 rounded-full" 
                 />
               </div>
               <div>
