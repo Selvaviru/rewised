@@ -31,24 +31,26 @@ const Hero: React.FC = () => {
     <section id="home" className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 min-h-screen flex items-center overflow-hidden relative">
       {/* Tax Notice Notification Popup */}
       {showNotification && (
-        <div className="fixed top-20 right-4 z-50 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl p-4 shadow-2xl max-w-sm animate-slideInRight">
+        <div className="fixed top-20 right-4 z-50 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-lg p-3 shadow-2xl max-w-xs animate-slideInRight border border-blue-500">
           <button
             onClick={() => setShowNotification(false)}
-            className="absolute top-2 right-2 text-white hover:text-gray-200 transition-colors"
+            className="absolute top-1 right-1 text-blue-200 hover:text-white transition-colors"
           >
-            <X className="w-4 h-4" />
+            <X className="w-3 h-3" />
           </button>
-          <div className="flex items-start space-x-3">
-            <AlertTriangle className="w-6 h-6 text-blue-200 flex-shrink-0 mt-1 animate-pulse" />
+          <div className="flex items-start space-x-2">
+            <div className="bg-blue-500 rounded-full p-1.5 animate-pulse">
+              <AlertTriangle className="w-4 h-4" />
+            </div>
             <div>
-              <h4 className="font-bold text-sm mb-1">Tax Notice Alert!</h4>
-              <p className="text-xs mb-3 opacity-90">Get expert help to respond and resolve tax notices quickly.</p>
+              <h4 className="font-bold text-xs mb-1">Tax Notice Alert!</h4>
+              <p className="text-xs mb-2 text-blue-100">Get expert help to respond and resolve tax notices quickly.</p>
               <button
                 onClick={() => {
                   openWhatsApp('Hi, I have received a tax notice and need expert help to respond and resolve it. Please guide me through the process.');
                   setShowNotification(false);
                 }}
-                className="bg-white text-blue-600 text-xs font-semibold py-1.5 px-3 rounded-md hover:bg-gray-100 transition-all duration-300"
+                className="w-full bg-white text-blue-600 text-xs font-semibold py-1.5 px-2 rounded-md hover:bg-blue-50 transition-all duration-300"
               >
                 Get Help Now
               </button>

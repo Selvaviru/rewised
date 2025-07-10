@@ -300,14 +300,29 @@ const NotificationSystem: React.FC = () => {
         .map((notification, index) => (
           <div
             key={notification.id}
-            className="fixed bottom-24 left-4 bg-red-500 text-white rounded-xl p-4 shadow-2xl max-w-sm animate-slideInLeft z-40"
+            className="fixed bottom-24 left-4 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-lg p-3 shadow-2xl max-w-xs animate-slideInLeft z-40 border border-blue-500"
             style={{ animationDelay: `${index * 0.5}s` }}
           >
-            <div className="flex items-start space-x-3">
-              <AlertTriangle className="w-6 h-6 flex-shrink-0 animate-pulse" />
+            <button
+              onClick={() => removeNotification(notification.id)}
+              className="absolute top-1 right-1 text-blue-200 hover:text-white transition-colors"
+            >
+              <X className="w-3 h-3" />
+            </button>
+            
+            <div className="flex items-start space-x-2">
+              <div className="bg-blue-500 rounded-full p-1.5 animate-pulse">
+                <AlertTriangle className="w-4 h-4" />
+              </div>
               <div className="flex-1">
-                <h4 className="font-bold text-sm mb-1">{notification.title}</h4>
-                <p className="text-sm opacity-90 mb-3">{notification.message}</p>
+                <h4 className="font-bold text-xs mb-1 flex items-center space-x-1">
+                  <span>{notification.title}</span>
+                </h4>
+                
+                <p className="text-xs text-blue-100 mb-2 line-clamp-2">
+                  {notification.message}
+                </p>
+                
                 <div className="flex space-x-2">
                   {notification.action && (
                     <button
@@ -315,25 +330,19 @@ const NotificationSystem: React.FC = () => {
                         notification.action!.onClick();
                         markAsRead(notification.id);
                       }}
-                      className="bg-white text-red-600 text-xs font-semibold py-1.5 px-3 rounded-md hover:bg-gray-100 transition-colors"
+                      className="flex-1 bg-white text-blue-600 text-xs font-semibold py-1.5 px-2 rounded-md hover:bg-blue-50 transition-all duration-300"
                     >
                       {notification.action.label}
                     </button>
                   )}
                   <button
                     onClick={() => markAsRead(notification.id)}
-                    className="text-white text-xs py-1.5 px-3 border border-white rounded-md hover:bg-white hover:text-red-600 transition-colors"
+                    className="text-blue-200 text-xs py-1.5 px-2 border border-blue-400 rounded-md hover:bg-blue-600 transition-colors"
                   >
                     Dismiss
                   </button>
                 </div>
               </div>
-              <button
-                onClick={() => removeNotification(notification.id)}
-                className="text-white hover:text-gray-200"
-              >
-                <X className="w-4 h-4" />
-              </button>
             </div>
           </div>
         ))}
