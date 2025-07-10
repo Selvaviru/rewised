@@ -78,22 +78,22 @@ const Hero: React.FC = () => {
 
             {/* Main Heading */}
             <div className="space-y-4">
-              <h2 className="text-5xl md:text-6xl font-bold leading-tight">
+              <h2 className="text-5xl md:text-6xl font-bold leading-tight text-center">
                 <span className="block text-blue-600 gradient-animate bg-clip-text text-transparent">INDIA'S #1</span>
                 <span className="block text-gray-800 text-3xl md:text-4xl mt-2">Most Trusted Tax Platform</span>
               </h2>
               
-              <p className="text-xl md:text-2xl text-gray-700 font-medium max-w-2xl">
+              <p className="text-xl md:text-2xl text-gray-700 font-medium max-w-2xl text-center mx-auto">
                 <span className="text-blue-600 font-bold">File ITR, GST Returns & Business Registration</span> with India's Leading Tax Experts
               </p>
               
-              <p className="text-lg text-gray-600 max-w-2xl">
+              <p className="text-lg text-gray-600 max-w-2xl text-center mx-auto">
                 Over <span className="font-bold text-blue-600">1000+ satisfied customers</span> trust TAXTIC for all their tax and compliance needs
               </p>
             </div>
 
             {/* Stats */}
-            <div className="flex space-x-8 py-6">
+            <div className="flex justify-center space-x-8 py-6">
               <div className="text-left hover-scale transition-all duration-300">
                 <div className="text-3xl font-bold text-blue-600">1000+</div>
                 <p className="text-gray-600 font-medium">Happy Customers</p>
@@ -109,7 +109,7 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={() => openWhatsApp('Hi, I would like to start my tax filing process. Please help me get started.')}
                 className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 flex items-center justify-center space-x-2 hover:scale-105 hover:shadow-lg"
@@ -128,7 +128,7 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Quick Contact */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
               <button
                 onClick={openPhone}
                 className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-all duration-300 hover:scale-105"

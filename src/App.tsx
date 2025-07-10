@@ -11,10 +11,14 @@ import Blog from './components/Blog';
 import FileUpload from './components/FileUpload';
 import ParallaxSection from './components/ParallaxSection';
 import NotificationSystem from './components/NotificationSystem';
+import InteractiveElements from './components/InteractiveElements';
+import ScrollAnimations from './components/ScrollAnimations';
 
 function App() {
   return (
     <div className="min-h-screen">
+      <InteractiveElements />
+      <ScrollAnimations />
       <NotificationSystem />
       <Header />
       <Hero />

@@ -1,7 +1,38 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { Calculator, FileText, Building, Award, Users, Shield, Clock, CheckCircle, Briefcase, CreditCard, BookOpen, PieChart, Receipt, Gavel, TrendingUp, UserCheck } from 'lucide-react';
+import GSTFlashCard from './GSTFlashCard';
 
 const Services: React.FC = () => {
+  const [showGSTCard, setShowGSTCard] = useState(false);
+  const [hasScrolledToGST, setHasScrolledToGST] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const gstService = document.getElementById('gst-service');
+      if (gstService && !hasScrolledToGST) {
+        const rect = gstService.getBoundingClientRect();
+        const isVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
+        
+        if (isVisible) {
+          setHasScrolledToGST(true);
+          // Show GST card after a short delay
+          setTimeout(() => {
+            setShowGSTCard(true);
+          }, 1000);
+          
+          // Auto-close after 10 seconds
+          setTimeout(() => {
+            setShowGSTCard(false);
+          }, 11000);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [hasScrolledToGST]);
+
   const services = [
     {
       icon: <Calculator className="w-12 h-12 text-blue-600" />,
@@ -17,7 +48,8 @@ const Services: React.FC = () => {
       description: 'End-to-end GST registration, return filing, and compliance management for your business.',
       features: ['GST Registration', 'Monthly/Quarterly Returns', 'GST Audit Support', 'Input Tax Credit', 'GST Refund'],
       price: '₹5,000 - ₹8,000',
-      color: 'green'
+      color: 'green',
+      id: 'gst-service'
     },
     {
       icon: <Building className="w-12 h-12 text-purple-600" />,
@@ -105,6 +137,7 @@ const Services: React.FC = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20 animate-fadeInUp" style={{animationDelay: '0.2s'}}>
           {services.map((service, index) => (
             <div
+              id={service.id}
               key={index}
               className={`bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-t-4 border-${service.color}-600 hover-lift animate-fadeInUp`}
               style={{animationDelay: `${0.1 * index}s`}}
@@ -201,6 +234,11 @@ Thank you!`;
           </div>
         </div>
       </div>
+      
+      {/* GST Flash Card */}
+      {showGSTCard && (
+        <GSTFlashCard onClose={() => setShowGSTCard(false)} />
+      )}
     </section>
   );
 };

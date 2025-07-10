@@ -5,15 +5,15 @@ const About: React.FC = () => {
   return (
     <section id="about" className="py-20 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fadeInUp">
+        <div className="text-center mb-16 scroll-animate">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">About TAXTIC</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             India's most trusted tax platform serving taxpayers, businesses, and professionals with comprehensive tax solutions
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16 animate-fadeInUp" style={{animationDelay: '0.2s'}}>
-          <div className="animate-fadeInLeft">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16 scroll-animate">
+          <div className="scroll-animate">
             <h3 className="text-3xl font-bold text-gray-800 mb-6">Who We Are</h3>
             <p className="text-lg text-gray-600 mb-6">
               TAXTIC is a leading tax consultancy and business services platform based in Madurai, Tamil Nadu. 
@@ -27,26 +27,26 @@ const About: React.FC = () => {
             </p>
             
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-blue-50 p-6 rounded-xl text-center hover-lift transition-all duration-300 animate-fadeInUp" style={{animationDelay: '0.4s'}}>
+              <div className="bg-blue-50 p-6 rounded-xl text-center interactive-hover magnetic scroll-animate stagger-1">
                 <div className="text-3xl font-bold text-blue-600 mb-2">1000+</div>
                 <p className="text-gray-700 font-medium">Happy Clients</p>
               </div>
-              <div className="bg-green-50 p-6 rounded-xl text-center hover-lift transition-all duration-300 animate-fadeInUp" style={{animationDelay: '0.5s'}}>
+              <div className="bg-green-50 p-6 rounded-xl text-center interactive-hover magnetic scroll-animate stagger-2">
                 <div className="text-3xl font-bold text-green-600 mb-2">5000+</div>
                 <p className="text-gray-700 font-medium">ITR Filed</p>
               </div>
-              <div className="bg-purple-50 p-6 rounded-xl text-center hover-lift transition-all duration-300 animate-fadeInUp" style={{animationDelay: '0.6s'}}>
+              <div className="bg-purple-50 p-6 rounded-xl text-center interactive-hover magnetic scroll-animate stagger-3">
                 <div className="text-3xl font-bold text-purple-600 mb-2">500+</div>
                 <p className="text-gray-700 font-medium">Businesses Registered</p>
               </div>
-              <div className="bg-orange-50 p-6 rounded-xl text-center hover-lift transition-all duration-300 animate-fadeInUp" style={{animationDelay: '0.7s'}}>
+              <div className="bg-orange-50 p-6 rounded-xl text-center interactive-hover magnetic scroll-animate stagger-4">
                 <div className="text-3xl font-bold text-orange-600 mb-2">99.9%</div>
                 <p className="text-gray-700 font-medium">Accuracy Rate</p>
               </div>
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-blue-600 to-blue-800 text-white p-8 rounded-2xl hover-lift transition-all duration-300 animate-fadeInRight gradient-animate">
+          <div className="bg-gradient-to-br from-blue-600 to-blue-800 text-white p-8 rounded-2xl interactive-hover gradient-animate scroll-animate animate-pulse-glow">
             <h3 className="text-2xl font-bold mb-6">Our Mission & Vision</h3>
             <div className="space-y-6">
               <div>
