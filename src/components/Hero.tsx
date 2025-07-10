@@ -5,12 +5,20 @@ const Hero: React.FC = () => {
   const [showNotification, setShowNotification] = useState(true);
 
   useEffect(() => {
-    // Auto-close notification after 8 seconds
+    // Show notification after 15 seconds of page load
     const timer = setTimeout(() => {
-      setShowNotification(false);
-    }, 8000);
+      setShowNotification(true);
+    }, 15000);
 
-    return () => clearTimeout(timer);
+    // Auto-close notification after it shows for 10 seconds
+    const closeTimer = setTimeout(() => {
+      setShowNotification(false);
+    }, 25000); // 15s delay + 10s display
+
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(closeTimer);
+    };
   }, []);
 
   const openWhatsApp = (message: string) => {

@@ -17,6 +17,7 @@ interface Notification {
 const NotificationSystem: React.FC = () => {
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const [showNotifications, setShowNotifications] = useState(false);
+  const [showFloatingReminders, setShowFloatingReminders] = useState(false);
 
   // Sample notifications - In real app, these would come from backend
   useEffect(() => {
@@ -123,6 +124,13 @@ const NotificationSystem: React.FC = () => {
 
     const autoReminders = generateReminders();
     setNotifications(prev => [...prev, ...autoReminders]);
+
+    // Show floating reminders after 15 seconds
+    const reminderTimer = setTimeout(() => {
+      setShowFloatingReminders(true);
+    }, 15000);
+
+    return () => clearTimeout(reminderTimer);
   }, []);
 
   const unreadCount = notifications.filter(n => !n.read).length;
@@ -294,7 +302,7 @@ const NotificationSystem: React.FC = () => {
       )}
 
       {/* Floating Reminder Cards */}
-      {notifications
+      {showFloatingReminders && notifications
         .filter(n => !n.read && n.type === 'deadline')
         .slice(0, 1)
         .map((notification, index) => (

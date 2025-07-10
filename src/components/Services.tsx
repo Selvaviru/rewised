@@ -16,15 +16,15 @@ const Services: React.FC = () => {
         
         if (isVisible) {
           setHasScrolledToGST(true);
-          // Show GST card after a short delay
+          // Show GST card after 15 seconds + scroll delay
           setTimeout(() => {
             setShowGSTCard(true);
-          }, 1000);
+          }, 15000);
           
-          // Auto-close after 10 seconds
+          // Auto-close after 10 seconds of display
           setTimeout(() => {
             setShowGSTCard(false);
-          }, 11000);
+          }, 25000); // 15s delay + 10s display
         }
       }
     };
