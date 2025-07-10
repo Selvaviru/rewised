@@ -304,48 +304,51 @@ const NotificationSystem: React.FC = () => {
       {/* Floating Reminder Cards */}
       {showFloatingReminders && notifications
         .filter(n => !n.read && n.type === 'deadline')
-        .slice(0, 1)
+        .slice(0, 2)
         .map((notification, index) => (
           <div
             key={notification.id}
-            className="fixed bottom-24 left-4 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-lg p-3 shadow-2xl max-w-xs animate-slideInLeft z-40 border border-blue-500"
-            style={{ animationDelay: `${index * 0.5}s` }}
+            className="fixed left-4 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-lg p-4 shadow-xl max-w-sm z-40 border border-blue-500 transition-all duration-300"
+            style={{ 
+              bottom: `${120 + (index * 140)}px`,
+              animation: 'slideInLeft 0.5s ease-out'
+            }}
           >
             <button
               onClick={() => removeNotification(notification.id)}
-              className="absolute top-1 right-1 text-blue-200 hover:text-white transition-colors"
+              className="absolute top-2 right-2 text-blue-200 hover:text-white transition-colors"
             >
-              <X className="w-3 h-3" />
+              <X className="w-4 h-4" />
             </button>
             
-            <div className="flex items-start space-x-2">
-              <div className="bg-blue-500 rounded-full p-1.5 animate-pulse">
-                <AlertTriangle className="w-4 h-4" />
+            <div className="flex items-start space-x-3">
+              <div className="bg-blue-500 rounded-full p-2 flex-shrink-0">
+                <AlertTriangle className="w-5 h-5" />
               </div>
               <div className="flex-1">
-                <h4 className="font-bold text-xs mb-1 flex items-center space-x-1">
+                <h4 className="font-bold text-sm mb-2 flex items-center space-x-1">
                   <span>{notification.title}</span>
                 </h4>
                 
-                <p className="text-xs text-blue-100 mb-2 line-clamp-2">
+                <p className="text-sm text-blue-100 mb-3">
                   {notification.message}
                 </p>
                 
-                <div className="flex space-x-2">
+                <div className="flex flex-col space-y-2">
                   {notification.action && (
                     <button
                       onClick={() => {
                         notification.action!.onClick();
                         markAsRead(notification.id);
                       }}
-                      className="flex-1 bg-white text-blue-600 text-xs font-semibold py-1.5 px-2 rounded-md hover:bg-blue-50 transition-all duration-300"
+                      className="w-full bg-white text-blue-600 text-sm font-semibold py-2 px-4 rounded-md hover:bg-blue-50 transition-colors duration-300"
                     >
                       {notification.action.label}
                     </button>
                   )}
                   <button
                     onClick={() => markAsRead(notification.id)}
-                    className="text-blue-200 text-xs py-1.5 px-2 border border-blue-400 rounded-md hover:bg-blue-600 transition-colors"
+                    className="text-blue-200 text-sm py-2 px-4 border border-blue-400 rounded-md hover:bg-blue-600 hover:text-white transition-colors duration-300"
                   >
                     Dismiss
                   </button>
