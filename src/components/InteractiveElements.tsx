@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { MousePointer, Sparkles, Zap, Star } from 'lucide-react';
 
 const InteractiveElements: React.FC = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
-  const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; delay: number }>>([]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -15,87 +12,39 @@ const InteractiveElements: React.FC = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  const createParticles = (x: number, y: number) => {
-    const newParticles = Array.from({ length: 5 }, (_, i) => ({
-      id: Date.now() + i,
-      x: x + (Math.random() - 0.5) * 100,
-      y: y + (Math.random() - 0.5) * 100,
-      delay: i * 0.1
-    }));
-    
-    setParticles(prev => [...prev, ...newParticles]);
-    
-    // Remove particles after animation
-    setTimeout(() => {
-      setParticles(prev => prev.filter(p => !newParticles.find(np => np.id === p.id)));
-    }, 1000);
-  };
-
-  const handleInteraction = (e: React.MouseEvent) => {
-    createParticles(e.clientX, e.clientY);
-  };
-
   return (
     <>
-      {/* Interactive Cursor Trail */}
+      {/* Subtle Interactive Cursor Trail - Professional */}
       <div
-        className="fixed pointer-events-none z-50 transition-all duration-300"
+        className="fixed pointer-events-none z-50 transition-all duration-500 opacity-30"
         style={{
-          left: mousePosition.x - 10,
-          top: mousePosition.y - 10,
-          transform: `scale(${isHovering ? 1.5 : 1})`,
+          left: mousePosition.x - 5,
+          top: mousePosition.y - 5,
         }}
       >
-        <div className="w-5 h-5 bg-blue-500 rounded-full opacity-30 animate-pulse"></div>
+        <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
       </div>
 
-      {/* Floating Particles */}
-      {particles.map((particle) => (
+      {/* Professional Floating Elements - Subtle */}
+      <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
+        {/* Minimal geometric shapes */}
         <div
-          key={particle.id}
-          className="fixed pointer-events-none z-40 animate-fadeInUp"
-          style={{
-            left: particle.x,
-            top: particle.y,
-            animationDelay: `${particle.delay}s`,
-            animationDuration: '1s'
-          }}
-        >
-          <Sparkles className="w-4 h-4 text-blue-500 animate-spin" />
-        </div>
-      ))}
-
-      {/* Interactive Hover Areas */}
-      <div className="fixed inset-0 pointer-events-none z-30">
-        {/* Top corners */}
-        <div
-          className="absolute top-10 left-10 w-20 h-20 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-20 animate-float"
-          style={{ animationDelay: '0s' }}
+          className="absolute top-20 left-10 w-8 h-8 border border-blue-200 rounded-full opacity-20 animate-float"
+          style={{ animationDelay: '0s', animationDuration: '6s' }}
         ></div>
         <div
-          className="absolute top-20 right-20 w-16 h-16 bg-gradient-to-br from-green-400 to-blue-500 rounded-full opacity-20 animate-float"
-          style={{ animationDelay: '1s' }}
-        ></div>
-        
-        {/* Bottom corners */}
-        <div
-          className="absolute bottom-32 left-16 w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full opacity-20 animate-float"
-          style={{ animationDelay: '2s' }}
+          className="absolute top-40 right-20 w-6 h-6 border border-blue-300 rounded-full opacity-15 animate-float"
+          style={{ animationDelay: '2s', animationDuration: '8s' }}
         ></div>
         <div
-          className="absolute bottom-20 right-32 w-14 h-14 bg-gradient-to-br from-orange-400 to-red-500 rounded-full opacity-20 animate-float"
-          style={{ animationDelay: '1.5s' }}
+          className="absolute bottom-40 left-1/4 w-4 h-4 border border-blue-200 rounded-full opacity-10 animate-float"
+          style={{ animationDelay: '4s', animationDuration: '7s' }}
+        ></div>
+        <div
+          className="absolute bottom-60 right-1/3 w-5 h-5 border border-blue-300 rounded-full opacity-20 animate-float"
+          style={{ animationDelay: '1s', animationDuration: '9s' }}
         ></div>
       </div>
-
-      {/* Interactive Click Areas */}
-      <div
-        className="fixed inset-0 pointer-events-auto z-20"
-        onClick={handleInteraction}
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
-        style={{ background: 'transparent' }}
-      />
     </>
   );
 };
