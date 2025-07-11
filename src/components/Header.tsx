@@ -40,7 +40,7 @@ Thank you!`;
         <div className="flex justify-between items-center">
           {/* Logo and Title */}
           <div className="flex items-center space-x-4 animate-fadeInLeft">
-            <div className="bg-gradient-to-br from-blue-800 to-blue-900 p-2 rounded-full shadow-lg">
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-2 rounded-full shadow-lg">
               <img 
                 src="/ChatGPT Image Jul 8, 2025, 05_11_48 PM.png" 
                 alt="TAXTIC Logo" 
@@ -48,7 +48,7 @@ Thank you!`;
               />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gray-800 hover:text-blue-600 transition-colors duration-300">TAXTIC</h1>
+              <h1 className="text-2xl font-bold text-gray-800 hover:text-gray-600 transition-colors duration-300">TAXTIC</h1>
               <span className="text-sm text-gray-600 italic">Your trusted tax buddy</span>
             </div>
           </div>
@@ -60,7 +60,7 @@ Thank you!`;
               <button
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
                 onMouseEnter={() => setIsServicesOpen(true)}
-                className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium hover:scale-105"
+                className="flex items-center space-x-1 text-gray-700 hover:text-gray-600 transition-all duration-300 font-medium hover:scale-105"
               >
                 <span>Services</span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />
@@ -84,7 +84,7 @@ Thank you!`;
                     <button
                       key={index}
                       onClick={() => openWhatsApp(service.name)}
-                      className="w-full text-left px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 border-b border-gray-50 last:border-b-0 group"
+                      className="w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-600 transition-all duration-300 border-b border-gray-50 last:border-b-0 group"
                       style={{animationDelay: `${index * 0.05}s`}}
                     >
                       <div className="flex justify-between items-center">
@@ -92,11 +92,11 @@ Thank you!`;
                           <div className="font-medium group-hover:translate-x-2 transition-transform duration-300">
                             {service.name}
                           </div>
-                          <div className="text-sm text-blue-600 font-semibold">
+                          <div className="text-sm text-gray-600 font-semibold">
                             {service.price}
                           </div>
                         </div>
-                        <div className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           Get Started
                         </div>
                       </div>
@@ -107,7 +107,7 @@ Thank you!`;
                 <div className="px-4 pt-3 border-t border-gray-100">
                   <button
                     onClick={() => openWhatsApp('General Inquiry')}
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 hover:scale-105"
+                    className="w-full bg-gray-600 hover:bg-gray-700 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 hover:scale-105"
                   >
                     Contact for Custom Service
                   </button>
@@ -115,22 +115,22 @@ Thank you!`;
               </div>
             </div>
 
-            <a href="#about" className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium hover:scale-105">About</a>
-            <a href="#testimonials" className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium hover:scale-105">Reviews</a>
-            <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium hover:scale-105">Contact</a>
+            <a href="#about" className="text-gray-700 hover:text-gray-600 transition-all duration-300 font-medium hover:scale-105">About</a>
+            <a href="#testimonials" className="text-gray-700 hover:text-gray-600 transition-all duration-300 font-medium hover:scale-105">Reviews</a>
+            <a href="#contact" className="text-gray-700 hover:text-gray-600 transition-all duration-300 font-medium hover:scale-105">Contact</a>
 
             {/* Contact Info */}
             <div className="flex items-center space-x-6 text-sm">
               <button
                 onClick={() => window.open('tel:+919789485470', '_self')}
-                className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-all duration-300 hover:scale-105"
+                className="flex items-center space-x-2 text-gray-600 hover:text-gray-600 transition-all duration-300 hover:scale-105"
               >
                 <Phone className="w-4 h-4" />
                 <span>+91 97894 85470</span>
               </button>
               <button
                 onClick={() => window.open('mailto:taxtictt@gmail.com', '_self')}
-                className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-all duration-300 hover:scale-105"
+                className="flex items-center space-x-2 text-gray-600 hover:text-gray-600 transition-all duration-300 hover:scale-105"
               >
                 <Mail className="w-4 h-4" />
                 <span>taxtictt@gmail.com</span>
@@ -157,30 +157,30 @@ Thank you!`;
                   <button
                     key={index}
                     onClick={() => openWhatsApp(service.name)}
-                    className="block w-full text-left ml-4 text-gray-600 hover:text-blue-600 transition-all duration-300 hover:translate-x-2 py-1"
+                    className="block w-full text-left ml-4 text-gray-600 hover:text-gray-600 transition-all duration-300 hover:translate-x-2 py-1"
                   >
                     <div className="flex justify-between items-center">
                       <span>{service.name}</span>
-                      <span className="text-xs text-blue-600 font-semibold">{service.price}</span>
+                      <span className="text-xs text-gray-600 font-semibold">{service.price}</span>
                     </div>
                   </button>
                 ))}
               </div>
-              <a href="#about" className="text-gray-700 hover:text-blue-600 transition-all duration-300 hover:translate-x-2">About</a>
-              <a href="#testimonials" className="text-gray-700 hover:text-blue-600 transition-all duration-300 hover:translate-x-2">Reviews</a>
-              <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-all duration-300 hover:translate-x-2">Contact</a>
+              <a href="#about" className="text-gray-700 hover:text-gray-600 transition-all duration-300 hover:translate-x-2">About</a>
+              <a href="#testimonials" className="text-gray-700 hover:text-gray-600 transition-all duration-300 hover:translate-x-2">Reviews</a>
+              <a href="#contact" className="text-gray-700 hover:text-gray-600 transition-all duration-300 hover:translate-x-2">Contact</a>
               
               <div className="pt-4 border-t border-gray-200">
                 <button
                   onClick={() => window.open('tel:+919789485470', '_self')}
-                  className="flex items-center space-x-2 text-gray-600 mb-2 hover:text-blue-600 transition-all duration-300"
+                  className="flex items-center space-x-2 text-gray-600 mb-2 hover:text-gray-600 transition-all duration-300"
                 >
                   <Phone className="w-4 h-4" />
                   <span>+91 97894 85470</span>
                 </button>
                 <button
                   onClick={() => window.open('mailto:taxtictt@gmail.com', '_self')}
-                  className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-all duration-300"
+                  className="flex items-center space-x-2 text-gray-600 hover:text-gray-600 transition-all duration-300"
                 >
                   <Mail className="w-4 h-4" />
                   <span>taxtictt@gmail.com</span>

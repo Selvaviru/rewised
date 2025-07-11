@@ -101,10 +101,10 @@
 
 @keyframes glow {
   0%, 100% {
-    text-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+    text-shadow: 0 0 5px rgba(75, 85, 99, 0.3);
   }
   50% {
-    text-shadow: 0 0 15px rgba(37, 99, 235, 0.5), 0 0 25px rgba(37, 99, 235, 0.3);
+    text-shadow: 0 0 15px rgba(75, 85, 99, 0.5), 0 0 25px rgba(75, 85, 99, 0.3);
   }
 }
 
@@ -122,10 +122,10 @@
 
 @keyframes pulseGlow {
   0%, 100% {
-    box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 0 5px rgba(75, 85, 99, 0.3);
   }
   50% {
-    box-shadow: 0 0 15px rgba(37, 99, 235, 0.5), 0 0 25px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 0 15px rgba(75, 85, 99, 0.5), 0 0 25px rgba(75, 85, 99, 0.3);
   }
 }
 
@@ -176,7 +176,7 @@
 
 /* Professional gradient animation */
 .gradient-animate {
-  background: linear-gradient(-45deg, #2563eb, #1d4ed8, #1e40af, #3b82f6);
+  background: linear-gradient(-45deg, #374151, #4b5563, #6b7280, #9ca3af);
   background-size: 400% 400%;
   animation: gradientShift 4s ease infinite;
 }
@@ -213,7 +213,7 @@
 
 .hover-lift:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
+  box-shadow: 0 8px 25px rgba(75, 85, 99, 0.15);
 }
 
 .hover-scale {
@@ -231,7 +231,7 @@
 
 .interactive-hover:hover {
   transform: translateY(-2px) scale(1.01);
-  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+  box-shadow: 0 10px 30px rgba(75, 85, 99, 0.1);
 }
 
 .magnetic {
@@ -267,7 +267,7 @@ html {
 
 .btn-interactive:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 6px 20px rgba(75, 85, 99, 0.2);
 }
 
 /* Enhanced transitions for all interactive elements */
@@ -280,31 +280,31 @@ html {
   pointer-events: none;
 }
 
-/* Professional color consistency */
+/* Professional color consistency - Dark Gray Theme */
 :root {
-  --primary-blue: #2563eb;
-  --primary-blue-light: #3b82f6;
-  --primary-blue-dark: #1d4ed8;
-  --primary-blue-50: #eff6ff;
-  --primary-blue-100: #dbeafe;
-  --primary-blue-200: #bfdbfe;
-  --primary-blue-300: #93c5fd;
-  --primary-blue-600: #2563eb;
-  --primary-blue-700: #1d4ed8;
-  --primary-blue-800: #1e40af;
-  --primary-blue-900: #1e3a8a;
+  --primary-gray: #374151;
+  --primary-gray-light: #4b5563;
+  --primary-gray-dark: #1f2937;
+  --primary-gray-50: #f9fafb;
+  --primary-gray-100: #f3f4f6;
+  --primary-gray-200: #e5e7eb;
+  --primary-gray-300: #d1d5db;
+  --primary-gray-600: #374151;
+  --primary-gray-700: #1f2937;
+  --primary-gray-800: #111827;
+  --primary-gray-900: #0f172a;
 }
 
-/* Ensure consistent blue color palette throughout */
-.text-blue-600 { color: var(--primary-blue) !important; }
-.bg-blue-600 { background-color: var(--primary-blue) !important; }
-.border-blue-600 { border-color: var(--primary-blue) !important; }
-.hover\:bg-blue-700:hover { background-color: var(--primary-blue-dark) !important; }
-.hover\:text-blue-700:hover { color: var(--primary-blue-dark) !important; }
+/* Ensure consistent gray color palette throughout */
+.text-gray-600 { color: var(--primary-gray) !important; }
+.bg-gray-600 { background-color: var(--primary-gray) !important; }
+.border-gray-600 { border-color: var(--primary-gray) !important; }
+.hover\:bg-gray-700:hover { background-color: var(--primary-gray-dark) !important; }
+.hover\:text-gray-700:hover { color: var(--primary-gray-dark) !important; }
 
 /* Professional focus states */
-.focus\:ring-blue-500:focus {
-  --tw-ring-color: var(--primary-blue) !important;
+.focus\:ring-gray-500:focus {
+  --tw-ring-color: var(--primary-gray) !important;
 }
 
 /* Remove any distracting animations */

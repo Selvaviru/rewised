@@ -61,60 +61,60 @@ Thank you!`;
 
   return (
     <div className="fixed bottom-6 right-4 z-40 max-w-sm">
-      <div className="bg-white border border-blue-200 rounded-xl p-4 shadow-xl transition-all duration-300" style={{ animation: 'slideInRight 0.5s ease-out' }}>
+      <div className="bg-white border border-gray-300 rounded-xl p-4 shadow-xl transition-all duration-300" style={{ animation: 'slideInRight 0.5s ease-out' }}>
         <button
           onClick={onClose}
-          className="absolute top-2 right-2 text-blue-400 hover:text-blue-600 transition-colors"
+          className="absolute top-2 right-2 text-gray-400 hover:text-gray-600 transition-colors"
         >
           <X className="w-4 h-4" />
         </button>
         
         <div className="flex items-start space-x-3">
-          <div className="bg-blue-100 rounded-full p-2 flex-shrink-0">
-            <FileText className="w-5 h-5 text-blue-600" />
+          <div className="bg-gray-100 rounded-full p-2 flex-shrink-0">
+            <FileText className="w-5 h-5 text-gray-600" />
           </div>
           <div className="flex-1">
-            <h4 className="font-semibold text-sm mb-2 flex items-center space-x-2 text-blue-800">
-              <AlertTriangle className="w-4 h-4 text-blue-600" />
+            <h4 className="font-semibold text-sm mb-2 flex items-center space-x-2 text-gray-800">
+              <AlertTriangle className="w-4 h-4 text-gray-600" />
               <span>GST Return Due Soon!</span>
             </h4>
             
-            <div className="bg-blue-50 rounded-md p-2 mb-3 border border-blue-200">
-              <div className="flex items-center space-x-2 text-sm mb-2 text-blue-700">
-                <Calendar className="w-4 h-4 text-blue-600" />
+            <div className="bg-gray-50 rounded-md p-2 mb-3 border border-gray-200">
+              <div className="flex items-center space-x-2 text-sm mb-2 text-gray-700">
+                <Calendar className="w-4 h-4 text-gray-600" />
                 <span>Filing Deadline: 20th of Month</span>
               </div>
               <div className="flex items-center justify-between text-sm">
                 <div className="text-center">
-                  <div className="font-bold text-blue-600 text-lg">{timeLeft.days}</div>
-                  <div className="text-blue-500 text-xs">Days</div>
+                  <div className="font-bold text-gray-600 text-lg">{timeLeft.days}</div>
+                  <div className="text-gray-500 text-xs">Days</div>
                 </div>
                 <div className="text-center">
-                  <div className="font-bold text-blue-600 text-lg">{timeLeft.hours}</div>
-                  <div className="text-blue-500 text-xs">Hours</div>
+                  <div className="font-bold text-gray-600 text-lg">{timeLeft.hours}</div>
+                  <div className="text-gray-500 text-xs">Hours</div>
                 </div>
                 <div className="text-center">
-                  <div className="font-bold text-blue-600 text-lg">{timeLeft.minutes}</div>
-                  <div className="text-blue-500 text-xs">Minutes</div>
+                  <div className="font-bold text-gray-600 text-lg">{timeLeft.minutes}</div>
+                  <div className="text-gray-500 text-xs">Minutes</div>
                 </div>
               </div>
             </div>
             
-            <p className="text-sm text-blue-700 mb-3">
+            <p className="text-sm text-gray-700 mb-3">
               Don't miss the deadline! Get expert help with your GST return filing.
             </p>
             
             <div className="flex flex-col space-y-2">
               <button
                 onClick={openWhatsApp}
-                className="w-full bg-blue-600 text-white text-sm font-medium py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center space-x-2"
+                className="w-full bg-gray-600 text-white text-sm font-medium py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-300 flex items-center justify-center space-x-2"
               >
                 <Clock className="w-4 h-4" />
                 <span>File Now</span>
               </button>
               <button
                 onClick={onClose}
-                className="text-blue-600 text-sm py-2 px-4 border border-blue-300 rounded-lg hover:bg-blue-50 transition-colors duration-300"
+                className="text-gray-600 text-sm py-2 px-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-300"
               >
                 Later
               </button>
